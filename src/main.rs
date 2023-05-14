@@ -1,5 +1,3 @@
-use std::fmt;
-
 mod cliio;
 mod executor;
 mod types;
@@ -23,7 +21,11 @@ fn main() {
 	    			});
     		},
     		"display" => println!("{:?}", employees),
-    		_ => continue,
+            "exit" => break,
+    		_ => {
+                println!("Invalid command entered!");
+                continue;
+            },
     	};
     }
 }
