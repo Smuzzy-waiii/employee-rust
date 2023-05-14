@@ -1,5 +1,11 @@
 use crate::types::{Employee, Department};
 
+pub fn display(employees: &Vec<Employee>) {
+	for employee in employees {
+		println!("{:?}", employee);
+	}
+}
+
 pub fn add_employee(employees: &mut Vec<Employee>, command: String) -> Result<(), &str> {
 	let mut words = command.split_whitespace();
 	let emp_name = words.nth(1).unwrap();

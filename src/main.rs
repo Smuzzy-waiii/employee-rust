@@ -4,7 +4,7 @@ mod types;
 
 use crate::cliio::{get_inp, fflush};
 use crate::types::{Employee};
-use crate::executor::{add_employee};
+use crate::executor::{add_employee, display};
 
 fn main() {
     let mut employees: Vec<Employee> = vec![];
@@ -20,7 +20,7 @@ fn main() {
 	    				println!("{:?}", err);
 	    			});
     		},
-    		"display" => println!("{:?}", employees),
+    		"display" => display(&employees),
             "exit" => break,
     		_ => {
                 println!("Invalid command entered!");
